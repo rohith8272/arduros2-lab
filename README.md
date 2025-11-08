@@ -19,6 +19,7 @@ cd ROS2_ardupilot_Iris_docker
 docker compose build
 docker compose run --rm ardupilot_ros bash
 ```
+By using the --rm option, Docker will automatically clean up the container once you close the application. 
 
 ### Build ROS2 Workspace (Inside Container)
 ```bash
