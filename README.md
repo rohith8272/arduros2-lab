@@ -15,6 +15,7 @@ cd Ardupilot-ROS2-docker
 ```
 
 ### Build and Run the Docker Container
+Start docker desktop first.
 ```bash
 docker compose build
 docker compose run --rm ardupilot_ros bash
