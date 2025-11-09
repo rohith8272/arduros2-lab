@@ -10,7 +10,7 @@ A Docker-based setup for running ROS2 with ArduPilot SITL (Software In The Loop)
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker.git
+git clone https://github.com/rohith8272/Ardupilot-ROS2-docker.git
 cd ROS2_ardupilot_Iris_docker
 ```
 
