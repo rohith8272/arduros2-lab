@@ -73,9 +73,13 @@ docker exec -it <your-ROS-container-ID> bash
 
 # Source workspace and check ROS2 nodes
 source ~/ros2_ws/install/setup.bash
+
 ros2 node list
 ros2 topic list
 ros2 node info /ap
+
+#check battery topic being published
+ros2 topic echo /ap/battery
 ```
 ### Network Configuration
 The setup uses the following ports:
