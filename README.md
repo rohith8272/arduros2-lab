@@ -75,7 +75,7 @@ docker exec -it <your-ROS-container-ID> bash
 source ~/ros2_ws/install/setup.bash
 ros2 node list
 ros2 topic list
-ros2 node info /ardupilot_sitl
+ros2 node info /ap
 ```
 ### Network Configuration
 The setup uses the following ports:
