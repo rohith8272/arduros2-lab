@@ -1,13 +1,10 @@
 
-FROM osrf/ros:humble-desktop
 
-ENV DISPLAY=:1
+FROM osrf/ros:humble-desktop
 
 # Install necessary programs
 RUN apt-get update \
     && apt-get install -y \
-    x11-apps \
-    mesa-utils \
     nano \
     vim \
     git \
@@ -69,6 +66,28 @@ RUN cd ~/ardupilot \
     && ./waf distclean \
     && ./waf configure --board MatekF405-Wing
 
+# Extra WS
+
+RUN mkdir -p ~/ws/src \
+    && cd ~/ws
+
+COPY extra.repos /home/${USERNAME}/ws/extra.repos
+
+RUN cd ~/ws/ \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/extra.repos src    \
+    && sudo apt update \
+    && rosdep update \
+    && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
+    && rosdep install -y --from-paths src --ignore-src
+
+#BUild ws
+RUN cd ~/ws \
+    && colcon build || true
+RUN /bin/bash -c "source ~/ws/install/setup.bash"
+
+
+#### ROS2 WS
+
 RUN mkdir -p ~/ros2_ws/src \
     && cd ~/ros2_ws
 
@@ -78,7 +97,7 @@ COPY ros2_gz.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
 
 
 RUN cd ~/ros2_ws/ \
-    && vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src    \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/ros2.repos src    \
     && sudo apt update \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
@@ -119,7 +138,7 @@ RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 
 #ROS2 with SITL in GAZEBO
 RUN cd ~/ros2_ws \
-    && vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src || true  \
+    && vcs import --input https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/ros2_gz.repos --recursive src || true  \
     && /bin/bash -c "source /opt/ros/humble/setup.bash" \
     && sudo apt update \
     && rosdep update \
