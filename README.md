@@ -1,5 +1,5 @@
-# Ardupilot-ROS2-docker
-A Docker-based setup for running ROS2 with ArduPilot SITL (Software In The Loop) simulation for Iris quadcopter.
+# arduros2-lab
+A Docker-based setup for running ROS2 with ArduPilot SITL (Software In The Loop) simulation.
 
 ## Prerequisites
 
