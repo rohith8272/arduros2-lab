@@ -27,6 +27,9 @@ By using the --rm option, Docker will automatically clean up the container once 
 cd ~/ros2_ws
 colcon test --packages-select ardupilot_dds_tests
 colcon build --packages-up-to ardupilot_sitl
+
+colcon build --packages-up-to ardupilot_gz_bringup
+colcon build --packages-select ardupilot_gazebo --symlink-install
 ```
 
 ### Source the Workspace
