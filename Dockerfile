@@ -75,7 +75,7 @@ COPY ros2_gz.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
 
 
 RUN cd ~/ros2_ws/ \
-    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/ros2.repos src    \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/rohith8272/arduros2-lab/main/ros2.repos src    \
     && sudo apt update \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
@@ -115,7 +115,7 @@ RUN /bin/bash -c "source ~/ros2_ws/install/setup.bash"
 
 #ROS2 with SITL in GAZEBO
 RUN cd ~/ros2_ws \
-    && vcs import --input https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/ros2_gz.repos --recursive src || true  \
+    && vcs import --input https://raw.githubusercontent.com/rohith8272/arduros2-lab/main/ros2_gz.repos --recursive src || true  \
     && /bin/bash -c "source /opt/ros/humble/setup.bash" \
     && sudo apt update \
     && rosdep update \
