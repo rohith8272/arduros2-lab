@@ -71,7 +71,7 @@ RUN cd ~/ardupilot \
 RUN mkdir -p ~/ws/src \
     && cd ~/ws
 
-COPY extra.repos /home/${USERNAME}/ws/extra.repos
+#COPY extra.repos /home/${USERNAME}/ws/extra.repos
 
 RUN cd ~/ws/ \
     && vcs import --recursive --input  https://raw.githubusercontent.com/rohith8272/arduros2-lab/main/extra.repos src    \
