@@ -54,7 +54,11 @@ ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
   master:=tcp:127.0.0.1:5760 \
   sitl:=127.0.0.1:5501
 ```
-
+or
+# Run Gazebo sim 
+```bash
+ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+```
 ### Terminal 2: Connect with MAVProxy
 
 ```bash
