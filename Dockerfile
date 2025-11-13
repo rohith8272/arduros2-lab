@@ -12,6 +12,7 @@ RUN apt-get update \
     lsb-release \
     gnupg \
     sudo \
+    python3-wxgtk4.0 --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
