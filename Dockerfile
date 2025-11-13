@@ -74,7 +74,7 @@ RUN mkdir -p ~/ws/src \
 COPY extra.repos /home/${USERNAME}/ws/extra.repos
 
 RUN cd ~/ws/ \
-    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/extra.repos src    \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/rohith8272/arduros2-lab/main/extra.repos src    \
     && sudo apt update \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
@@ -97,7 +97,7 @@ COPY ros2_gz.repos /home/${USERNAME}/ros2_ws/ros2_gz.repos
 
 
 RUN cd ~/ros2_ws/ \
-    && vcs import --recursive --input  https://raw.githubusercontent.com/Jagadeesh-pradhani/ROS2_ardupilot_Iris_docker/main/ros2.repos src    \
+    && vcs import --recursive --input  https://raw.githubusercontent.com/rohith8272/arduros2-lab/main/ros2.repos src    \
     && sudo apt update \
     && rosdep update \
     && /bin/bash -c "source /opt/ros/humble/setup.bash"   \
