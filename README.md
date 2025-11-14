@@ -5,6 +5,8 @@ A Docker-based setup for running ROS2 with ArduPilot SITL (Software In The Loop)
 
 - Docker
 - Docker Compose
+- Git
+  
 
 ## Quick Start
 
@@ -18,6 +20,8 @@ cd arduros2-lab
 Start docker desktop first.
 ```bash
 docker compose build
+
+# start a new session called ardupilot_ros
 docker compose run --rm ardupilot_ros bash
 ```
 By using the --rm option, Docker will automatically clean up the container once you close the application. 
