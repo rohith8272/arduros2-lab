@@ -17,7 +17,8 @@ cd arduros2-lab
 ```
 
 ### Build and Run the Docker Container
-Start docker desktop first.
+Start docker desktop first. Now inside the arduros2-lab folder
+run the following: 
 ```bash
 docker compose build
 
